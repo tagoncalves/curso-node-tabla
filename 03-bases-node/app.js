@@ -1,15 +1,15 @@
 
-//Importar funcion "crearArchivo"
+//importar Librerias
 const { crearArchivo } = require('./helpers/multiplicar');
-//importar archivo "YARS"
 const argv = require('./config/yargs');
-//importar Libreria "colors"
 require('colors');
-
+//limpiamos la consola
 console.clear();
 
 
-//llamo la funcion crear archivo la cual importe previamente en la linea de codigo 3
+//llamo la funcion crear archivo pasandole los parametros ingresados por consola.
 crearArchivo( argv.b, argv.l, argv.h )
+    //ejecuto .then si funciona correctamente - muestro mensaje
     .then ( nombreArchivo => console.log( nombreArchivo, 'creado'))
+    //ejecuto .catch si sucede algun error - muestro mensaje
     .catch ( err => console.log(err) );
