@@ -60,6 +60,7 @@ const pausa = async() => {
             message: `Presione ${'enter'.green} para continuar`
         }
     ]
+    console.log('\n');
     await inquirer.prompt(question);
 }
 

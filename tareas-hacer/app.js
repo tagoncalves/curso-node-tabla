@@ -14,7 +14,6 @@ const main = async() => {
         console.log({ opt });
 
         await pausa();
-        console.log('\n');
 
     } while ( opt != "0" );
 
