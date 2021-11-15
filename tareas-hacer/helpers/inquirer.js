@@ -47,17 +47,24 @@ const inquirerMenu = async() => {
     console.log('======================='.green);
 
     const {opcion} = await inquirer.prompt(preguntas);
+
     return opcion;
 }
-// `${'1.'.green} Crear tarea`,
-// `${'2.'.green} Listar tareas`,
-// `${'3.'.green} Listar tareas completadas`,
-// `${'4.'.green} Listar tareas pendientes`,
-// `${'5.'.green} Completar tarea/s`,
-// `${'6.'.green} Borrar tarea`,
-// `${'0.'.green} Salir\n`,
+
+const pausa = async() => {
+
+    const question = [
+        {
+            type: 'input',
+            name: 'enter',
+            message: `Presione ${'enter'.green} para continuar`
+        }
+    ]
+    await inquirer.prompt(question);
+}
 
 
 module.exports ={
-    inquirerMenu
+    inquirerMenu,
+    pausa
 }
